@@ -1,161 +1,141 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VeltisAI.Domain.Entities;
 using VeltisAI.Infrastructure.Data;
-using Microsoft.AspNetCore.Authorization;
 
-namespace VeltisAI.Web.Areas.Admin.Controllers
+namespace VeltisAI.Web.Areas.Admin.Controllers;
+
+[Area("Admin")]
+[Authorize(Roles = "Admin")]
+public class PlansController : Controller
 {
-    [Area("Admin")]
-    [Authorize(Roles = "Admin")]
-    public class PlansController : Controller
+    private readonly AppDbContext _context;
+
+    public PlansController(AppDbContext context)
     {
-        private readonly AppDbContext _context;
+        _context = context;
+    }
 
-        public PlansController(AppDbContext context)
-        {
-            _context = context;
-        }
+    public async Task<IActionResult> Index()
+    {
+        var plans = await _context.Plans
+            .OrderBy(x => x.Name)
+            .ToListAsync();
 
-        // GET: Admin/Plans
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Plans.ToListAsync());
-        }
+        return View(plans);
+    }
 
-        // GET: Admin/Plans/Details/5
-        public async Task<IActionResult> Details(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+    public async Task<IActionResult> Details(Guid? id)
+    {
+        if (id is null)
+            return NotFound();
 
-            var plan = await _context.Plans
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (plan == null)
-            {
-                return NotFound();
-            }
+        var plan = await _context.Plans
+            .FirstOrDefaultAsync(x => x.Id == id);
 
+        if (plan is null)
+            return NotFound();
+
+        return View(plan);
+    }
+
+    public IActionResult Create()
+    {
+        return View(new Plan());
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(
+        [Bind("Name,Description,MonthlyPrice,CreditsIncluded,MaxUsers,MaxTokensPerMonth,Active")]
+        Plan plan)
+    {
+        if (!ModelState.IsValid)
             return View(plan);
-        }
 
-        // GET: Admin/Plans/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+        plan.Id = Guid.NewGuid();
+        plan.CreatedAt = DateTime.UtcNow;
 
-        // POST: Admin/Plans/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,MonthlyPrice,CreditsIncluded,Active,CreatedAt")] Plan plan)
-        {
-            if (ModelState.IsValid)
-            {
-                plan.Id = Guid.NewGuid();
-                _context.Add(plan);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+        _context.Plans.Add(plan);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    public async Task<IActionResult> Edit(Guid? id)
+    {
+        if (id is null)
+            return NotFound();
+
+        var plan = await _context.Plans.FindAsync(id);
+
+        if (plan is null)
+            return NotFound();
+
+        return View(plan);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(
+        Guid id,
+        [Bind("Id,Name,Description,MonthlyPrice,CreditsIncluded,MaxUsers,MaxTokensPerMonth,Active,CreatedAt")]
+        Plan plan)
+    {
+        if (id != plan.Id)
+            return NotFound();
+
+        if (!ModelState.IsValid)
             return View(plan);
-        }
 
-        // GET: Admin/Plans/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        try
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var plan = await _context.Plans.FindAsync(id);
-            if (plan == null)
-            {
-                return NotFound();
-            }
-            return View(plan);
-        }
-
-        // POST: Admin/Plans/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Description,MonthlyPrice,CreditsIncluded,Active,CreatedAt")] Plan plan)
-        {
-            if (id != plan.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(plan);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PlanExists(plan.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(plan);
-        }
-
-        // GET: Admin/Plans/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var plan = await _context.Plans
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (plan == null)
-            {
-                return NotFound();
-            }
-
-            return View(plan);
-        }
-
-        // POST: Admin/Plans/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
-        {
-            var plan = await _context.Plans.FindAsync(id);
-            if (plan != null)
-            {
-                _context.Plans.Remove(plan);
-            }
-
+            _context.Plans.Update(plan);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!PlanExists(plan.Id))
+                return NotFound();
+
+            throw;
         }
 
-        private bool PlanExists(Guid id)
+        return RedirectToAction(nameof(Index));
+    }
+
+    public async Task<IActionResult> Delete(Guid? id)
+    {
+        if (id is null)
+            return NotFound();
+
+        var plan = await _context.Plans
+            .FirstOrDefaultAsync(x => x.Id == id);
+
+        if (plan is null)
+            return NotFound();
+
+        return View(plan);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(Guid id)
+    {
+        var plan = await _context.Plans.FindAsync(id);
+
+        if (plan is not null)
         {
-            return _context.Plans.Any(e => e.Id == id);
+            _context.Plans.Remove(plan);
+            await _context.SaveChangesAsync();
         }
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    private bool PlanExists(Guid id)
+    {
+        return _context.Plans.Any(x => x.Id == id);
     }
 }

@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    background: #f4f6fb;
+    color: #101828;
+}
+
+.admin-shell {
+    min-height: 100vh;
+    display: flex;
+}
+
+.admin-sidebar {
+    width: 260px;
+    background: #0f172a;
+    color: #fff;
+    padding: 24px 18px;
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.admin-brand span {
+    width: 40px;
+    height: 40px;
+    background: #2563eb;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+}
+
+.admin-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin-menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 11px 12px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.admin-menu a:hover {
+    background: #1e293b;
+    color: #fff;
+}
+
+.admin-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.admin-topbar {
+    height: 72px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-topbar small {
+    display: block;
+    color: #667085;
+}
+
+.admin-content {
+    padding: 28px;
+}
+
+.card {
+    border: 0;
+    border-radius: 16px;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+.table {
+    background: #fff;
+}

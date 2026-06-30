@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Veltis AI</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/admin.css" />
+</head>
+<body>
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <span>V</span>
+                <strong>Veltis AI</strong>
+            </div>
+
+            <nav class="admin-menu">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index">Dashboard</a>
+                <a asp-area="Admin" asp-controller="Companies" asp-action="Index">Empresas</a>
+                <a asp-area="Admin" asp-controller="Customers" asp-action="Index">Clientes</a>
+                <a asp-area="Admin" asp-controller="Plans" asp-action="Index">Planos</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-topbar">
+                <div>
+                    <strong>Painel Administrativo</strong>
+                    <small>Gestão da plataforma Veltis AI</small>
+                </div>
+
+                <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                    <button class="btn btn-outline-danger btn-sm" type="submit">Sair</button>
+                </form>
+            </header>
+
+            <section class="admin-content">
+                @RenderBody()
+            </section>
+        </main>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
