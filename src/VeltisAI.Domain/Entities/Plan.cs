@@ -1,3 +1,5 @@
+namespace VeltisAI.Domain.Entities;
+
 public class Plan
 {
     public Guid Id { get; set; }
