@@ -20,6 +20,10 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Subscription> Subscriptions => Set<Subscription>();
     public DbSet<CreditTransaction> CreditTransactions => Set<CreditTransaction>();
 
+    public DbSet<AIProvider> AIProviders => Set<AIProvider>();
+
+    public DbSet<AIModel> AIModels => Set<AIModel>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
