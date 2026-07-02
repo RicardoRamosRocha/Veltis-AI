@@ -1,36 +1,50 @@
-using Microsoft.EntityFrameworkCore;
-using VeltisAI.Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using VeltisAI.Application.AI.Contracts;
+using VeltisAI.Application.AI.Factories;
+using VeltisAI.Infrastructure.Data;
 using VeltisAI.Infrastructure.Identity;
+using VeltisAI.Infrastructure.Options;
+using VeltisAI.Infrastructure.Providers;
+using VeltisAI.Infrastructure.Providers.OpenAI;
 using VeltisAI.Infrastructure.Seed;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(
-        builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
- builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+builder.Services
+    .AddIdentity<ApplicationUser, IdentityRole>(options =>
+    {
+        options.Password.RequireDigit = true;
+        options.Password.RequiredLength = 6;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireNonAlphanumeric = false;
+    })
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.Configure<OpenAIOptions>(options =>
 {
-    options.Password.RequireDigit = true;
-    options.Password.RequiredLength = 6;
-    options.Password.RequireUppercase = false;
-    options.Password.RequireNonAlphanumeric = false;
-})
-.AddEntityFrameworkStores<AppDbContext>()
-.AddDefaultTokenProviders();       
+    builder.Configuration.GetSection(OpenAIOptions.SectionName).Bind(options);
+
+    options.ApiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY")
+                     ?? options.ApiKey;
+});
+
+builder.Services.AddHttpClient();
+
+builder.Services.AddScoped<IAIProvider, OpenAIProvider>();
+builder.Services.AddScoped<IProviderFactory, ProviderFactory>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -42,8 +56,6 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
@@ -52,6 +64,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-await IdentitySeeder.SeedAsync(app.Services);  
+await IdentitySeeder.SeedAsync(app.Services);
 
 app.Run();
