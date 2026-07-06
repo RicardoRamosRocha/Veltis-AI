@@ -45,6 +45,8 @@ builder.Services.AddScoped<IAIProvider, OpenAIProvider>();
 builder.Services.AddScoped<IProviderFactory, ProviderFactory>();
 builder.Services.AddScoped<IPlanRepository, PlanRepository>();
 builder.Services.AddScoped<IPlanService, PlanService>();
+builder.Services.AddScoped<IAIProviderRepository, AIProviderRepository>();
+builder.Services.AddScoped<IAIProviderService, AIProviderService>();
 
 var app = builder.Build();
 
