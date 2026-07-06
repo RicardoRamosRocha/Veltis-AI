@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using VeltisAI.Application.Interfaces.Services;
 using VeltisAI.Domain.Entities;
-using VeltisAI.Infrastructure.Data;
 
 namespace VeltisAI.Web.Areas.Admin.Controllers;
 
@@ -10,19 +9,16 @@ namespace VeltisAI.Web.Areas.Admin.Controllers;
 [Authorize(Roles = "Admin")]
 public class PlansController : Controller
 {
-    private readonly AppDbContext _context;
+    private readonly IPlanService _planService;
 
-    public PlansController(AppDbContext context)
+    public PlansController(IPlanService planService)
     {
-        _context = context;
+        _planService = planService;
     }
 
     public async Task<IActionResult> Index()
     {
-        var plans = await _context.Plans
-            .OrderBy(x => x.Name)
-            .ToListAsync();
-
+        var plans = await _planService.GetAllAsync();
         return View(plans);
     }
 
@@ -31,8 +27,7 @@ public class PlansController : Controller
         if (id is null)
             return NotFound();
 
-        var plan = await _context.Plans
-            .FirstOrDefaultAsync(x => x.Id == id);
+        var plan = await _planService.GetByIdAsync(id.Value);
 
         if (plan is null)
             return NotFound();
@@ -57,8 +52,7 @@ public class PlansController : Controller
         plan.Id = Guid.NewGuid();
         plan.CreatedAt = DateTime.UtcNow;
 
-        _context.Plans.Add(plan);
-        await _context.SaveChangesAsync();
+        await _planService.CreateAsync(plan);
 
         return RedirectToAction(nameof(Index));
     }
@@ -68,7 +62,7 @@ public class PlansController : Controller
         if (id is null)
             return NotFound();
 
-        var plan = await _context.Plans.FindAsync(id);
+        var plan = await _planService.GetByIdAsync(id.Value);
 
         if (plan is null)
             return NotFound();
@@ -89,18 +83,12 @@ public class PlansController : Controller
         if (!ModelState.IsValid)
             return View(plan);
 
-        try
-        {
-            _context.Plans.Update(plan);
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!PlanExists(plan.Id))
-                return NotFound();
+        var existingPlan = await _planService.GetByIdAsync(id);
 
-            throw;
-        }
+        if (existingPlan is null)
+            return NotFound();
+
+        await _planService.UpdateAsync(plan);
 
         return RedirectToAction(nameof(Index));
     }
@@ -110,8 +98,7 @@ public class PlansController : Controller
         if (id is null)
             return NotFound();
 
-        var plan = await _context.Plans
-            .FirstOrDefaultAsync(x => x.Id == id);
+        var plan = await _planService.GetByIdAsync(id.Value);
 
         if (plan is null)
             return NotFound();
@@ -123,19 +110,8 @@ public class PlansController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(Guid id)
     {
-        var plan = await _context.Plans.FindAsync(id);
-
-        if (plan is not null)
-        {
-            _context.Plans.Remove(plan);
-            await _context.SaveChangesAsync();
-        }
+        await _planService.DeleteAsync(id);
 
         return RedirectToAction(nameof(Index));
-    }
-
-    private bool PlanExists(Guid id)
-    {
-        return _context.Plans.Any(x => x.Id == id);
     }
 }

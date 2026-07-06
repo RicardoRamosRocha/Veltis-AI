@@ -8,6 +8,10 @@ using VeltisAI.Infrastructure.Options;
 using VeltisAI.Infrastructure.Providers;
 using VeltisAI.Infrastructure.Providers.OpenAI;
 using VeltisAI.Infrastructure.Seed;
+using VeltisAI.Application.Interfaces.Repositories;
+using VeltisAI.Application.Interfaces.Services;
+using VeltisAI.Infrastructure.Repositories;
+using VeltisAI.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +43,8 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddScoped<IAIProvider, OpenAIProvider>();
 builder.Services.AddScoped<IProviderFactory, ProviderFactory>();
+builder.Services.AddScoped<IPlanRepository, PlanRepository>();
+builder.Services.AddScoped<IPlanService, PlanService>();
 
 var app = builder.Build();
 
