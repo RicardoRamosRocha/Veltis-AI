@@ -8,7 +8,7 @@
 
 ## Objetivo
 
-Representar a estratégia inicial de publicação do Veltis AI Platform.
+Representar a estratégia inicial de publicação do Orizon AI Platform.
 
 ```text
 Desenvolvedor

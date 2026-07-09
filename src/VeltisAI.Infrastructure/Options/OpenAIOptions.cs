@@ -1,4 +1,4 @@
-namespace VeltisAI.Infrastructure.Options;
+namespace OrizonAI.Infrastructure.Options;
 
 public class OpenAIOptions
 {

@@ -1,6 +1,6 @@
-using VeltisAI.Application.AI.Contracts;
+using OrizonAI.Application.AI.Contracts;
 
-namespace VeltisAI.Application.AI.Factories;
+namespace OrizonAI.Application.AI.Factories;
 
 public interface IProviderFactory
 {

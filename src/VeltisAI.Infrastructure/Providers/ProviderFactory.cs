@@ -1,7 +1,7 @@
-using VeltisAI.Application.AI.Contracts;
-using VeltisAI.Application.AI.Factories;
+using OrizonAI.Application.AI.Contracts;
+using OrizonAI.Application.AI.Factories;
 
-namespace VeltisAI.Infrastructure.Providers;
+namespace OrizonAI.Infrastructure.Providers;
 
 public class ProviderFactory : IProviderFactory
 {

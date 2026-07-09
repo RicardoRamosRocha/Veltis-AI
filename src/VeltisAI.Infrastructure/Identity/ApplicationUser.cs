@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
-using VeltisAI.Domain.Entities;
+using OrizonAI.Domain.Entities;
 
-namespace VeltisAI.Infrastructure.Identity;
+namespace OrizonAI.Infrastructure.Identity;
 
 public class ApplicationUser : IdentityUser
 {

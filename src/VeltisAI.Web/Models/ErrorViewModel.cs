@@ -1,4 +1,4 @@
-namespace VeltisAI.Web.Models;
+namespace OrizonAI.Web.Models;
 
 public class ErrorViewModel
 {

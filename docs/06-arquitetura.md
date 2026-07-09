@@ -1,4 +1,4 @@
-# Veltis AI Platform
+# Orizon AI Platform
 
 ## Documento 06 – Arquitetura do Sistema
 
@@ -10,7 +10,7 @@
 
 # 1. Objetivo
 
-Este documento descreve a arquitetura adotada pelo Veltis AI Platform, apresentando sua organização, responsabilidades de cada camada, fluxo de dados, padrões utilizados e diretrizes para evolução do sistema.
+Este documento descreve a arquitetura adotada pelo Orizon AI Platform, apresentando sua organização, responsabilidades de cada camada, fluxo de dados, padrões utilizados e diretrizes para evolução do sistema.
 
 O objetivo é garantir que todo o desenvolvimento siga uma arquitetura consistente, escalável e de fácil manutenção.
 
@@ -63,18 +63,18 @@ Além da aplicação Web, a plataforma disponibilizará uma API REST utilizada p
 ```text
 src/
 │
-├── VeltisAI.Domain
-├── VeltisAI.Application
-├── VeltisAI.Infrastructure
-├── VeltisAI.Web
-└── VeltisAI.API
+├── OrizonAI.Domain
+├── OrizonAI.Application
+├── OrizonAI.Infrastructure
+├── OrizonAI.Web
+└── OrizonAI.API
 ```
 
 ---
 
 # 5. Responsabilidade de Cada Projeto
 
-## VeltisAI.Domain
+## OrizonAI.Domain
 
 Contém:
 
@@ -88,7 +88,7 @@ Não possui dependência de infraestrutura.
 
 ---
 
-## VeltisAI.Application
+## OrizonAI.Application
 
 Responsável por:
 
@@ -103,7 +103,7 @@ Não acessa diretamente o banco de dados.
 
 ---
 
-## VeltisAI.Infrastructure
+## OrizonAI.Infrastructure
 
 Responsável por:
 
@@ -117,7 +117,7 @@ Responsável por:
 
 ---
 
-## VeltisAI.Web
+## OrizonAI.Web
 
 Aplicação MVC responsável por:
 
@@ -129,7 +129,7 @@ Aplicação MVC responsável por:
 
 ---
 
-## VeltisAI.API
+## OrizonAI.API
 
 Responsável por fornecer uma API REST para:
 
@@ -265,7 +265,7 @@ Flutter
  HTTPS + JWT
     │
     ▼
-VeltisAI.API
+OrizonAI.API
     │
     ▼
 Application

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using VeltisAI.Domain.Entities;
-using VeltisAI.Infrastructure.Identity;
+using OrizonAI.Domain.Entities;
+using OrizonAI.Infrastructure.Identity;
 
-namespace VeltisAI.Infrastructure.Data;
+namespace OrizonAI.Infrastructure.Data;
 
 public class AppDbContext : IdentityDbContext<ApplicationUser>
 {

@@ -1,6 +1,6 @@
 # Guia de Contribuição
 
-Obrigado por contribuir com o Veltis AI Platform.
+Obrigado por contribuir com o Orizon AI Platform.
 
 ## Objetivo
 

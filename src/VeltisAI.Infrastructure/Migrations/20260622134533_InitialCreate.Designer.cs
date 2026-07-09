@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using VeltisAI.Infrastructure.Data;
+using OrizonAI.Infrastructure.Data;
 
 #nullable disable
 
-namespace VeltisAI.Infrastructure.Migrations
+namespace OrizonAI.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20260622134533_InitialCreate")]
@@ -25,7 +25,7 @@ namespace VeltisAI.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.Company", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.Company", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.Customer", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.Customer", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

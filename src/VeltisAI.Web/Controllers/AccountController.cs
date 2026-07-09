@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using VeltisAI.Infrastructure.Identity;
-using VeltisAI.Web.Models.Account;
+using OrizonAI.Infrastructure.Identity;
+using OrizonAI.Web.Models.Account;
 
-namespace VeltisAI.Web.Controllers;
+namespace OrizonAI.Web.Controllers;
 
 public class AccountController : Controller
 {

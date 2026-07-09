@@ -1,9 +1,9 @@
-using VeltisAI.Application.Interfaces.Repositories;
-using VeltisAI.Application.Interfaces.Services;
-using VeltisAI.Domain.Entities;
+using OrizonAI.Application.Interfaces.Repositories;
+using OrizonAI.Application.Interfaces.Services;
+using OrizonAI.Domain.Entities;
 
 
-namespace VeltisAI.Application.Services;
+namespace OrizonAI.Application.Services;
 
 public class AIModelService : IAIModelService
 {

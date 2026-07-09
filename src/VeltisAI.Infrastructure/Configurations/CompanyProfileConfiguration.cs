@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using VeltisAI.Domain.Entities;
+using OrizonAI.Domain.Entities;
 
-namespace VeltisAI.Infrastructure.Configurations;
+namespace OrizonAI.Infrastructure.Configurations;
 
 public class CompanyProfileConfiguration : IEntityTypeConfiguration<CompanyProfile>
 {

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace VeltisAI.Infrastructure.Migrations
+namespace OrizonAI.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class AddAIInfrastructureModels : Migration

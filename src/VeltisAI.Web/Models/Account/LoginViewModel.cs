@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace VeltisAI.Web.Models.Account;
+namespace OrizonAI.Web.Models.Account;
 
 public class LoginViewModel
 {

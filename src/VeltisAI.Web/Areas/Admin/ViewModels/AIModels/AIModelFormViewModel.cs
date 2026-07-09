@@ -1,6 +1,6 @@
-using VeltisAI.Domain.Enums;
+using OrizonAI.Domain.Enums;
 
-namespace VeltisAI.Web.Areas.Admin.ViewModels.AIModels;
+namespace OrizonAI.Web.Areas.Admin.ViewModels.AIModels;
 
 public class AIModelFormViewModel
 {

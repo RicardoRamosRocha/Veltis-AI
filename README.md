@@ -1,4 +1,4 @@
-# Veltis AI Platform
+# Orizon AI Platform
 
 > Plataforma SaaS para gerenciamento de clientes, assinaturas, créditos e acesso centralizado a múltiplos provedores de Inteligência Artificial.
 
@@ -11,7 +11,7 @@
 
 # Visão Geral
 
-O **Veltis AI Platform** é uma plataforma SaaS desenvolvida para centralizar o acesso a diferentes modelos de Inteligência Artificial através de uma única interface.
+O **Orizon AI Platform** é uma plataforma SaaS desenvolvida para centralizar o acesso a diferentes modelos de Inteligência Artificial através de uma única interface.
 
 A plataforma permitirá que empresas gerenciem clientes, planos, assinaturas, créditos e consumo de IA de forma segura, organizada e escalável.
 
@@ -57,11 +57,11 @@ A plataforma permitirá que empresas gerenciem clientes, planos, assinaturas, cr
 ```text
 src/
 │
-├── VeltisAI.Domain
-├── VeltisAI.Application
-├── VeltisAI.Infrastructure
-├── VeltisAI.Web
-└── VeltisAI.API
+├── OrizonAI.Domain
+├── OrizonAI.Application
+├── OrizonAI.Infrastructure
+├── OrizonAI.Web
+└── OrizonAI.API
 ```
 
 ---
@@ -173,4 +173,4 @@ Este projeto está licenciado sob a licença MIT.
 
 **Ricardo Ramos da Rocha**
 
-Desenvolvido como parte da evolução do **Veltis AI Platform**, uma plataforma SaaS moderna para gerenciamento e comercialização de serviços baseados em Inteligência Artificial.
+Desenvolvido como parte da evolução do **Orizon AI Platform**, uma plataforma SaaS moderna para gerenciamento e comercialização de serviços baseados em Inteligência Artificial.

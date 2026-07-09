@@ -1,6 +1,6 @@
-using VeltisAI.Application.AI.DTOs;
+using OrizonAI.Application.AI.DTOs;
 
-namespace VeltisAI.Application.AI.Contracts;
+namespace OrizonAI.Application.AI.Contracts;
 
 public interface IAIProvider
 {

@@ -11,7 +11,7 @@ Usuário
 Interface do Chat
    │
    ▼
-VeltisAI.Web / VeltisAI.API
+OrizonAI.Web / OrizonAI.API
    │
    ▼
 ChatService

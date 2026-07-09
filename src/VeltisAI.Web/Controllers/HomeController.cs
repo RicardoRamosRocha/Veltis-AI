@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using VeltisAI.Web.Models;
+using OrizonAI.Web.Models;
 
-namespace VeltisAI.Web.Controllers;
+namespace OrizonAI.Web.Controllers;
 
 public class HomeController : Controller
 {

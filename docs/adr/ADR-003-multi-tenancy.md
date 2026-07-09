@@ -4,7 +4,7 @@
 
 ## Contexto
 
-O Veltis AI Platform atenderá diversas empresas utilizando a mesma aplicação.
+O Orizon AI Platform atenderá diversas empresas utilizando a mesma aplicação.
 
 ## Decisão
 

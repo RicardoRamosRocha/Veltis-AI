@@ -1,4 +1,4 @@
-# Veltis AI Platform
+# Orizon AI Platform
 
 ## Documento 02 – Requisitos do Sistema
 
@@ -10,7 +10,7 @@
 
 # 1. Objetivo
 
-Este documento define os requisitos funcionais e não funcionais do Veltis AI Platform, servindo como referência para o desenvolvimento, testes, implantação e evolução da plataforma.
+Este documento define os requisitos funcionais e não funcionais do Orizon AI Platform, servindo como referência para o desenvolvimento, testes, implantação e evolução da plataforma.
 
 ---
 

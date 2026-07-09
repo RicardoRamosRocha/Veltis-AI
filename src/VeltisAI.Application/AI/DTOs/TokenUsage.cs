@@ -1,4 +1,4 @@
-namespace VeltisAI.Application.AI.DTOs;
+namespace OrizonAI.Application.AI.DTOs;
 
 public class TokenUsage
 {

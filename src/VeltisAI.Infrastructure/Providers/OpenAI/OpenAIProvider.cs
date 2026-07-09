@@ -1,7 +1,7 @@
-using VeltisAI.Application.AI.Contracts;
-using VeltisAI.Application.AI.DTOs;
+using OrizonAI.Application.AI.Contracts;
+using OrizonAI.Application.AI.DTOs;
 
-namespace VeltisAI.Infrastructure.Providers.OpenAI;
+namespace OrizonAI.Infrastructure.Providers.OpenAI;
 
 public class OpenAIProvider : IAIProvider
 {

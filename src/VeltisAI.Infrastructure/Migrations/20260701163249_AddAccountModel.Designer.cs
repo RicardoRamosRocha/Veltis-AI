@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using VeltisAI.Infrastructure.Data;
+using OrizonAI.Infrastructure.Data;
 
 #nullable disable
 
-namespace VeltisAI.Infrastructure.Migrations
+namespace OrizonAI.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20260701163249_AddAccountModel")]
@@ -157,7 +157,7 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.Account", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.Account", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -194,7 +194,7 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.Company", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.Company", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -227,7 +227,7 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.CompanyProfile", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.CompanyProfile", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -267,7 +267,7 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.ToTable("CompanyProfiles");
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.Customer", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.Customer", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -308,7 +308,7 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.Plan", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.Plan", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -345,7 +345,7 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.ToTable("Plans");
                 });
 
-            modelBuilder.Entity("VeltisAI.Infrastructure.Identity.ApplicationUser", b =>
+            modelBuilder.Entity("OrizonAI.Infrastructure.Identity.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -435,7 +435,7 @@ namespace VeltisAI.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("VeltisAI.Infrastructure.Identity.ApplicationUser", null)
+                    b.HasOne("OrizonAI.Infrastructure.Identity.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -444,7 +444,7 @@ namespace VeltisAI.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("VeltisAI.Infrastructure.Identity.ApplicationUser", null)
+                    b.HasOne("OrizonAI.Infrastructure.Identity.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -459,7 +459,7 @@ namespace VeltisAI.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("VeltisAI.Infrastructure.Identity.ApplicationUser", null)
+                    b.HasOne("OrizonAI.Infrastructure.Identity.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -468,27 +468,27 @@ namespace VeltisAI.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("VeltisAI.Infrastructure.Identity.ApplicationUser", null)
+                    b.HasOne("OrizonAI.Infrastructure.Identity.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.CompanyProfile", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.CompanyProfile", b =>
                 {
-                    b.HasOne("VeltisAI.Domain.Entities.Account", "Account")
+                    b.HasOne("OrizonAI.Domain.Entities.Account", "Account")
                         .WithOne("CompanyProfile")
-                        .HasForeignKey("VeltisAI.Domain.Entities.CompanyProfile", "AccountId")
+                        .HasForeignKey("OrizonAI.Domain.Entities.CompanyProfile", "AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.Customer", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.Customer", b =>
                 {
-                    b.HasOne("VeltisAI.Domain.Entities.Company", "Company")
+                    b.HasOne("OrizonAI.Domain.Entities.Company", "Company")
                         .WithMany()
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -497,9 +497,9 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("VeltisAI.Infrastructure.Identity.ApplicationUser", b =>
+            modelBuilder.Entity("OrizonAI.Infrastructure.Identity.ApplicationUser", b =>
                 {
-                    b.HasOne("VeltisAI.Domain.Entities.Account", "Account")
+                    b.HasOne("OrizonAI.Domain.Entities.Account", "Account")
                         .WithMany()
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -507,7 +507,7 @@ namespace VeltisAI.Infrastructure.Migrations
                     b.Navigation("Account");
                 });
 
-            modelBuilder.Entity("VeltisAI.Domain.Entities.Account", b =>
+            modelBuilder.Entity("OrizonAI.Domain.Entities.Account", b =>
                 {
                     b.Navigation("CompanyProfile");
                 });

@@ -1,6 +1,6 @@
 # Changelog
 
-Todas as mudanças importantes do projeto **Veltis AI Platform** serão documentadas neste arquivo.
+Todas as mudanças importantes do projeto **Orizon AI Platform** serão documentadas neste arquivo.
 
 Este projeto segue o princípio de versionamento semântico.
 
@@ -61,4 +61,4 @@ Este projeto segue o princípio de versionamento semântico.
 
 ### 1.0.0
 
-Primeira versão comercial do Veltis AI Platform.
+Primeira versão comercial do Orizon AI Platform.

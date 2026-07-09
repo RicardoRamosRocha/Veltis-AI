@@ -1,6 +1,6 @@
-using VeltisAI.Domain.Enums;
+using OrizonAI.Domain.Enums;
 
-namespace VeltisAI.Domain.Entities;
+namespace OrizonAI.Domain.Entities;
 
 public class Subscription
 {

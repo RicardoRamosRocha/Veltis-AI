@@ -1,4 +1,4 @@
-# Veltis AI Platform
+# Orizon AI Platform
 
 ## Documento 07 – Especificação da API
 
@@ -10,7 +10,7 @@
 
 # 1. Objetivo
 
-Este documento descreve a arquitetura e os principais endpoints da API REST do Veltis AI Platform.
+Este documento descreve a arquitetura e os principais endpoints da API REST do Orizon AI Platform.
 
 A API será responsável pela comunicação entre os clientes (Web, Flutter e integrações externas) e a camada de negócios da plataforma.
 

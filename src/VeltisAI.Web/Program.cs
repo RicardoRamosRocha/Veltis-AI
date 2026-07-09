@@ -1,17 +1,17 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using VeltisAI.Application.AI.Contracts;
-using VeltisAI.Application.AI.Factories;
-using VeltisAI.Infrastructure.Data;
-using VeltisAI.Infrastructure.Identity;
-using VeltisAI.Infrastructure.Options;
-using VeltisAI.Infrastructure.Providers;
-using VeltisAI.Infrastructure.Providers.OpenAI;
-using VeltisAI.Infrastructure.Seed;
-using VeltisAI.Application.Interfaces.Repositories;
-using VeltisAI.Application.Interfaces.Services;
-using VeltisAI.Infrastructure.Repositories;
-using VeltisAI.Application.Services;
+using OrizonAI.Application.AI.Contracts;
+using OrizonAI.Application.AI.Factories;
+using OrizonAI.Infrastructure.Data;
+using OrizonAI.Infrastructure.Identity;
+using OrizonAI.Infrastructure.Options;
+using OrizonAI.Infrastructure.Providers;
+using OrizonAI.Infrastructure.Providers.OpenAI;
+using OrizonAI.Infrastructure.Seed;
+using OrizonAI.Application.Interfaces.Repositories;
+using OrizonAI.Application.Interfaces.Services;
+using OrizonAI.Infrastructure.Repositories;
+using OrizonAI.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

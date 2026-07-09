@@ -1,4 +1,4 @@
-﻿namespace VeltisAI.Domain;
+﻿namespace OrizonAI.Domain;
 
 public class Class1
 {

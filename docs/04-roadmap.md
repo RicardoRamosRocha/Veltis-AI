@@ -1,4 +1,4 @@
-# Veltis AI Platform
+# Orizon AI Platform
 
 ## Documento 04 – Roadmap do Projeto
 
@@ -10,7 +10,7 @@
 
 # Objetivo
 
-Este documento apresenta o planejamento estratégico de evolução do Veltis AI Platform.
+Este documento apresenta o planejamento estratégico de evolução do Orizon AI Platform.
 
 O Roadmap organiza as entregas em versões incrementais, permitindo disponibilizar funcionalidades estáveis ao longo do desenvolvimento até a primeira versão comercial.
 
@@ -180,7 +180,7 @@ Concluir o módulo financeiro.
 
 ## Objetivo
 
-Disponibilizar o Veltis AI como plataforma de integração.
+Disponibilizar o Orizon AI como plataforma de integração.
 
 ### Entregas
 
@@ -219,7 +219,7 @@ Disponibilizar acesso móvel à plataforma.
 
 ## Objetivo
 
-Publicar a primeira versão comercial do Veltis AI Platform.
+Publicar a primeira versão comercial do Orizon AI Platform.
 
 ### Entregas
 
@@ -294,4 +294,4 @@ Publicar a primeira versão comercial do Veltis AI Platform.
 | Versão | Data | Descrição |
 |---------|------|-----------|
 | 1.0 | Junho/2026 | Criação inicial do Roadmap do Projeto |
-| 1.1 | Julho/2026 | Revisão completa alinhando o Roadmap à estratégia do Veltis AI Platform como infraestrutura para acesso e gerenciamento de Inteligência Artificial. |
+| 1.1 | Julho/2026 | Revisão completa alinhando o Roadmap à estratégia do Orizon AI Platform como infraestrutura para acesso e gerenciamento de Inteligência Artificial. |

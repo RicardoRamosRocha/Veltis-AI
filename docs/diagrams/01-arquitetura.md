@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Representar a arquitetura completa do Veltis AI Platform.
+Representar a arquitetura completa do Orizon AI Platform.
 
 ```text
                     INTERNET
@@ -16,7 +16,7 @@ Representar a arquitetura completa do Veltis AI Platform.
         └───────────────┬───────────────┘
                         │
                         ▼
-                VeltisAI.API
+                OrizonAI.API
                         │
                         ▼
              Application Layer

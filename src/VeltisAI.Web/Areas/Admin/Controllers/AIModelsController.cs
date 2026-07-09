@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using VeltisAI.Application.Interfaces.Services;
-using VeltisAI.Domain.Entities;
-using VeltisAI.Web.Areas.Admin.ViewModels.AIModels;
+using OrizonAI.Application.Interfaces.Services;
+using OrizonAI.Domain.Entities;
+using OrizonAI.Web.Areas.Admin.ViewModels.AIModels;
 
-namespace VeltisAI.Web.Areas.Admin.Controllers;
+namespace OrizonAI.Web.Areas.Admin.Controllers;
 
 [Area("Admin")]
 [Authorize]

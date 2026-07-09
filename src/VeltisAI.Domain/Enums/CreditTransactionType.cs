@@ -1,4 +1,4 @@
-namespace VeltisAI.Domain.Enums;
+namespace OrizonAI.Domain.Enums;
 
 public enum CreditTransactionType
 {

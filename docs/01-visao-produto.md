@@ -1,4 +1,4 @@
-# Veltis AI Platform
+# Orizon AI Platform
 
 ## Documento 01 – Visão do Produto
 
@@ -10,13 +10,13 @@
 
 # 1. Introdução
 
-O **Veltis AI Platform** é uma plataforma SaaS (Software as a Service) desenvolvida para centralizar, gerenciar e disponibilizar acesso a múltiplos provedores e modelos de Inteligência Artificial através de uma única plataforma.
+O **Orizon AI Platform** é uma plataforma SaaS (Software as a Service) desenvolvida para centralizar, gerenciar e disponibilizar acesso a múltiplos provedores e modelos de Inteligência Artificial através de uma única plataforma.
 
 Seu principal objetivo é permitir que pessoas e empresas utilizem diferentes provedores de IA sem a necessidade de gerenciar múltiplas contas, chaves de API, integrações e formas de cobrança.
 
 Além do acesso aos modelos de Inteligência Artificial, a plataforma oferece recursos completos para administração de clientes, empresas, usuários, planos, assinaturas, créditos, consumo de tokens, faturamento e integrações via API.
 
-O Veltis AI Platform atua como uma camada de infraestrutura para aplicações baseadas em Inteligência Artificial, podendo ser utilizado diretamente por usuários finais ou integrado a sistemas externos, como ERP, CRM, plataformas SaaS e o próprio Veltis Workspace.
+O Orizon AI Platform atua como uma camada de infraestrutura para aplicações baseadas em Inteligência Artificial, podendo ser utilizado diretamente por usuários finais ou integrado a sistemas externos, como ERP, CRM, plataformas SaaS e o próprio Orizon Workspace.
 
 ---
 
@@ -37,7 +37,7 @@ Construir uma plataforma moderna, segura e escalável capaz de:
 
 # 3. Público-Alvo
 
-O Veltis AI Platform foi projetado para atender três públicos principais.
+O Orizon AI Platform foi projetado para atender três públicos principais.
 
 ## Pessoas
 
@@ -65,7 +65,7 @@ O Veltis AI Platform foi projetado para atender três públicos principais.
 - ERP.
 - CRM.
 - Plataformas SaaS.
-- Aplicações que desejam consumir Inteligência Artificial através da API do Veltis AI Platform.
+- Aplicações que desejam consumir Inteligência Artificial através da API do Orizon AI Platform.
 
 ---
 
@@ -80,7 +80,7 @@ Hoje pessoas e empresas que utilizam Inteligência Artificial normalmente precis
 - Monitorar diferentes painéis administrativos.
 - Implementar regras próprias de cobrança e consumo.
 
-O Veltis AI Platform elimina essa complexidade oferecendo uma única plataforma para gerenciamento e consumo de Inteligência Artificial.
+O Orizon AI Platform elimina essa complexidade oferecendo uma única plataforma para gerenciamento e consumo de Inteligência Artificial.
 
 ---
 
@@ -151,7 +151,7 @@ A plataforma permitirá:
 - Escalável.
 - Preparada para aplicativo Flutter.
 - Atende usuários individuais, empresas e sistemas corporativos.
-- Base tecnológica para soluções como o Veltis Workspace.
+- Base tecnológica para soluções como o Orizon Workspace.
 
 ---
 
@@ -194,11 +194,11 @@ Estrutura principal:
 ```text
 src/
 
-├── VeltisAI.Domain
-├── VeltisAI.Application
-├── VeltisAI.Infrastructure
-├── VeltisAI.Web
-└── VeltisAI.API
+├── OrizonAI.Domain
+├── OrizonAI.Application
+├── OrizonAI.Infrastructure
+├── OrizonAI.Web
+└── OrizonAI.API
 ```
 
 Essa arquitetura facilita manutenção, testes, escalabilidade e reutilização da plataforma.
@@ -207,7 +207,7 @@ Essa arquitetura facilita manutenção, testes, escalabilidade e reutilização 
 
 # 10. Visão de Longo Prazo
 
-O objetivo é transformar o Veltis AI Platform em uma infraestrutura completa para comercialização, gerenciamento e distribuição de Inteligência Artificial.
+O objetivo é transformar o Orizon AI Platform em uma infraestrutura completa para comercialização, gerenciamento e distribuição de Inteligência Artificial.
 
 Entre as evoluções previstas estão:
 
@@ -258,4 +258,4 @@ O projeto encontra-se em desenvolvimento da infraestrutura principal.
 | Versão | Data | Descrição |
 |---------|------|-----------|
 | 1.0 | Junho/2026 | Criação inicial da Visão do Produto |
-| 1.1 | Julho/2026 | Revisão completa alinhando o Veltis AI Platform como infraestrutura para acesso, gerenciamento e comercialização de Inteligência Artificial para pessoas, empresas e sistemas. |
+| 1.1 | Julho/2026 | Revisão completa alinhando o Orizon AI Platform como infraestrutura para acesso, gerenciamento e comercialização de Inteligência Artificial para pessoas, empresas e sistemas. |

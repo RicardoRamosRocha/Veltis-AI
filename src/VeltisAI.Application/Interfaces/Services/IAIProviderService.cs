@@ -1,7 +1,7 @@
-using VeltisAI.Domain.Entities;
-using VeltisAI.Application.Interfaces.Repositories;
+using OrizonAI.Domain.Entities;
+using OrizonAI.Application.Interfaces.Repositories;
 
-namespace VeltisAI.Application.Interfaces.Services;
+namespace OrizonAI.Application.Interfaces.Services;
 
 public interface IAIProviderService
 {

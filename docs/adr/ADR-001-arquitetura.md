@@ -4,7 +4,7 @@
 
 ## Contexto
 
-O Veltis AI Platform será um sistema SaaS de médio e grande porte, com diversos módulos e possibilidade de crescimento contínuo.
+O Orizon AI Platform será um sistema SaaS de médio e grande porte, com diversos módulos e possibilidade de crescimento contínuo.
 
 Era necessário definir uma arquitetura que favorecesse manutenção, escalabilidade e organização do código.
 

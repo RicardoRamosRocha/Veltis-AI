@@ -1,4 +1,4 @@
-# Veltis AI Platform
+# Orizon AI Platform
 
 ## Documento 05 – Modelo de Domínio
 
@@ -10,7 +10,7 @@
 
 # 1. Objetivo
 
-Este documento define o modelo de domínio do Veltis AI Platform.
+Este documento define o modelo de domínio do Orizon AI Platform.
 
 O objetivo é estabelecer os principais conceitos de negócio da plataforma antes da modelagem definitiva do banco de dados e da implementação das entidades no código.
 
@@ -28,7 +28,7 @@ Este documento responde perguntas fundamentais como:
 
 # 2. Princípio Central
 
-O Veltis AI Platform será centrado no conceito de **Account**.
+O Orizon AI Platform será centrado no conceito de **Account**.
 
 A Account representa a conta contratante da plataforma.
 
@@ -48,7 +48,7 @@ Todas as principais operações da plataforma estarão vinculadas a uma Account.
 
 A **Account** representa a unidade principal de contratação, cobrança, consumo e isolamento lógico da plataforma.
 
-Ela é o centro do domínio do Veltis AI.
+Ela é o centro do domínio do Orizon AI.
 
 ## Responsabilidades
 
@@ -83,7 +83,7 @@ Uma empresa contrata um plano para que vários usuários internos acessem e cons
 
 ### Conta Sistema
 
-Um sistema externo, como ERP, CRM ou Veltis Workspace, consome a API do Veltis AI.
+Um sistema externo, como ERP, CRM ou Orizon Workspace, consome a API do Orizon AI.
 
 ---
 

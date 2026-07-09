@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using VeltisAI.Infrastructure.Identity;
+using OrizonAI.Infrastructure.Identity;
 
-namespace VeltisAI.Infrastructure.Seed;
+namespace OrizonAI.Infrastructure.Seed;
 
 public static class IdentitySeeder
 {
@@ -18,7 +18,7 @@ public static class IdentitySeeder
         if (!await roleManager.RoleExistsAsync(adminRole))
             await roleManager.CreateAsync(new IdentityRole(adminRole));
 
-        string email = "admin@veltisai.com";
+        string email = "admin@Orizonai.com";
         string password = "Admin@123";
 
         var user = await userManager.FindByEmailAsync(email);

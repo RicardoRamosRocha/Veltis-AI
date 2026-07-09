@@ -1,4 +1,4 @@
-namespace VeltisAI.Domain.Entities;
+namespace OrizonAI.Domain.Entities;
 
 public class Company
 {

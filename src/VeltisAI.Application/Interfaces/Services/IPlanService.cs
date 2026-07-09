@@ -1,6 +1,6 @@
-using VeltisAI.Domain.Entities;
+using OrizonAI.Domain.Entities;
 
-namespace VeltisAI.Application.Interfaces.Services;
+namespace OrizonAI.Application.Interfaces.Services;
 
 public interface IPlanService
 {

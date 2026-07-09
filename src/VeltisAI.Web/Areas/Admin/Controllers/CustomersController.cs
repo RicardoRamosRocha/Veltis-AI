@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using VeltisAI.Domain.Entities;
-using VeltisAI.Infrastructure.Data;
+using OrizonAI.Domain.Entities;
+using OrizonAI.Infrastructure.Data;
 
-namespace VeltisAI.Web.Areas.Admin.Controllers
+namespace OrizonAI.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class CustomersController : Controller

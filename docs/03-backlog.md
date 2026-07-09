@@ -1,4 +1,4 @@
-# Veltis AI Platform
+# Orizon AI Platform
 
 ## Documento 03 – Product Backlog
 
@@ -10,7 +10,7 @@
 
 # Objetivo
 
-Este documento organiza as funcionalidades do Veltis AI Platform em Épicos e Funcionalidades.
+Este documento organiza as funcionalidades do Orizon AI Platform em Épicos e Funcionalidades.
 
 O Product Backlog representa todas as funcionalidades que agregam valor ao produto e será atualizado continuamente durante sua evolução.
 
@@ -235,4 +235,4 @@ Atividades técnicas como Docker, CI/CD, GitHub Actions, Refatorações, Scripts
 | Versão | Data | Descrição |
 |---------|------|-----------|
 | 1.0 | Junho/2026 | Criação inicial do Product Backlog |
-| 1.1 | Julho/2026 | Revisão completa alinhando o backlog ao posicionamento do Veltis AI Platform como infraestrutura para acesso e gerenciamento de Inteligência Artificial. |
+| 1.1 | Julho/2026 | Revisão completa alinhando o backlog ao posicionamento do Orizon AI Platform como infraestrutura para acesso e gerenciamento de Inteligência Artificial. |

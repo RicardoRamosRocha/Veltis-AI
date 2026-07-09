@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\VeltisAI.Domain\VeltisAI.Domain.csproj" />
-    <ProjectReference Include="..\VeltisAI.Application\VeltisAI.Application.csproj" />
+    <ProjectReference Include="..\OrizonAI.Domain\OrizonAI.Domain.csproj" />
+    <ProjectReference Include="..\OrizonAI.Application\OrizonAI.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

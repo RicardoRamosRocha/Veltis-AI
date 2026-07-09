@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using VeltisAI.Application.Interfaces.Repositories;
-using VeltisAI.Domain.Entities;
-using VeltisAI.Infrastructure.Data;
+using OrizonAI.Application.Interfaces.Repositories;
+using OrizonAI.Domain.Entities;
+using OrizonAI.Infrastructure.Data;
 
-namespace VeltisAI.Infrastructure.Repositories;
+namespace OrizonAI.Infrastructure.Repositories;
 
 public class PlanRepository : IPlanRepository
 {
